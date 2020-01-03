@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My calc</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style2.css">
+</head>
+
+<body>
+    <div class="calc">
+        <div class="display"><form name="form"><input type="text"
+            name="textview" readonly></form>
+
+        </div>
+        <div class="buttons_lines">
+            <div id="del_all" class="button_long" onclick="clean()">
+                c
+
+            </div>
+            <div id="del" class="button_small" onclick="back()">
+                del
+
+            </div>
+            <div class="button_small" onclick="insert('/')">
+                /
+
+            </div>
+        </div>
+        <div class="buttons_lines">
+
+            <div class="button_small" onclick="insert('7')">
+                7
+
+            </div>
+            <div class="button_small" onclick="insert('8')">
+                8
+
+            </div>
+            <div id="9" class="button_small" onclick="insert('9')">
+                9
+            </div>
+            <div id="multiplication" class="button_small" onclick="insert('*')">
+                *
+            </div>
+
+        </div>
+        <div class="buttons_lines">
+
+            <div id="4" class="button_small" onclick="insert('4')">
+                4
+
+            </div>
+            <div id="5" class="button_small" onclick="insert('5')">
+                5
+
+            </div>
+            <div id="6" class="button_small" onclick="insert('6')">
+                6
+            </div>
+            <div id="subtraction" class="button_small" onclick="insert('-')">
+                -
+            </div>
+
+        </div>
+        <div class="buttons_lines">
+
+            <div id="1" class="button_small" onclick="insert('1')">
+                1
+
+            </div>
+            <div id="2" class="button_small"onclick="insert('2')">
+                2
+
+            </div>
+            <div id="3" class="button_small"onclick="insert('3')">
+                3
+            </div>
+            <div id="addition" class="button_small"onclick="insert('+')">
+                +
+            </div>
+
+        </div>
+        <div class="buttons_lines">
+
+            <div class="button_small" onclick="insert('0')">
+                0
+
+            </div>
+            <div id="point" class="button_small" onclick="insert('.')">
+                .
+
+            </div>
+            <div id="equal" class="button_long" onclick="equal()">
+                =
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <script>
+        function insert(num) {
+         document.form.textview.value = 
+         document.form.textview.value + num;
+        }
+        function clean() {
+            document.form.textview.value = "";   
+        }
+        function back() {
+            var exp = document.form.textview.value;
+            document.form.textview.value = exp.substring(0, exp.length-1);
+        }
+        function equal() {
+            var exp = document.form.textview.value;
+            if(exp) {
+                document.form.textview.value = eval(exp);
+            }
+        }
+    </script>
+</body>
+
+</html>
